@@ -1,0 +1,952 @@
+@import "variables.scss";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+// ====== Reusable style ====== //
+.section-span{
+    font-family: $span-font;
+    color: $red-color;
+    font-size: 1rem;
+}
+
+.section-title{
+    font-family: $title-font;
+    color: $black-color;
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 900;
+    @include breakpoint(600px){
+        font-size: 3rem;
+    }
+    @include breakpoint(992px){
+        max-width: 100%
+    }
+
+    @include breakpoint(1100px){
+        font-size: 4rem;
+    }
+
+}
+
+.section-text{
+    line-height: 1.4;
+    font-family: $text-font;
+    color: $gray-color;
+}
+
+.section-btn{
+    @include removeDefaultButtonStyle();
+    @include flexCenter(flex-start);
+    background-color: $red-color;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 100px;
+    i{
+        margin-right: .5rem
+    }
+    div{
+        font-family: $text-font;
+        font-size: .9rem;
+        font-weight: 900;
+    }
+}
+
+// ====== Navigation ====== //
+.nav{
+    @include flexCenter(space-between);
+    padding: 1rem;
+    .navbar{
+        display: none;
+    }
+    @include breakpoint(992px){
+        padding: 0;
+        max-width: 800px;
+        margin: 0 auto;
+        .navbar{
+            display: block;
+            @include flexCenter(flex-start);
+            .navbar-item{
+                list-style-type: none;
+                margin-left: 2rem;
+                .navbar-link{
+                    text-decoration: none;
+                    color: white;
+                    font-family: $title-font;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+            }
+            
+        }
+        .nav-toggler{
+            display: none;
+        }
+    }
+    @include breakpoint(1100px){
+        max-width: 1000px;
+    }
+    @include breakpoint(1200px){
+        max-width: 1100px;
+    }
+    
+    .logo{
+        width: 90px;
+    }
+    
+    .nav-toggler{
+        margin-right: .4rem;
+        background-color: $brown-color;
+        border-radius: 7px;
+        padding: .5rem 1rem;
+        color: white;
+        font-size: 1.5rem;
+    }
+}
+
+
+// ====== Hero ====== //
+
+.hero{
+    position: relative;
+    background-image: url('/images/slider_bg2.png');
+    background-position: center;
+    background-size: cover;
+    .hero-container{
+        padding: 2rem 1rem 3rem 1rem;
+        @include breakpoint(992px){
+            @include flexCenter(space-between);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0rem;
+        }
+        @include breakpoint(1100px){
+            max-width: 1000px;
+        }
+        @include breakpoint(1200px){
+            max-width: 1100px;
+        }
+        .hero-intro{
+            font-family: $title-font;
+            @include breakpoint(992px){
+                width: 45%;
+            }
+            .hero-span{
+                @include flexCenter(flex-start);
+                color: $red-color;
+                font-weight: 900;
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+                .hero-line{
+                    margin-left: 1rem;
+                    margin-top: 3px;
+                    width: 80px;
+                    height: 2px;
+                    background-color: $red-color;
+                }
+            }
+
+            .hero-title{
+                font-size: 3.5rem;
+                line-height: 1;
+                font-weight: 900;
+                color: white;
+
+                @include breakpoint(600px){
+                    font-size: 5rem;
+                }
+                @include breakpoint(1100px){
+                    font-size: 7rem;
+                }
+            }
+
+            .hero-box{
+                position: relative;
+                margin: 1rem 0;
+                width: 95%;
+                @include breakpoint(600px){
+                    width: 75%;
+                }
+                @include breakpoint(992px){
+                    width: 150%;
+                }
+                
+                border-radius: 4px;
+                background-color: $red-color;
+                @include flexCenter(flex-start);
+                color: white;
+                padding: 1.5rem .5rem;
+                font-weight: 700;
+                @include breakpoint(600px){
+                    padding: 1.5rem 2rem;
+                }
+                div{
+                    margin-right: .3rem;
+                    font-size: .9rem;
+                    @include breakpoint(600px){
+                        font-size: 1.1rem;
+                        margin-right: 1rem;
+                    }
+                    @include breakpoint(1100px){
+                        font-size: 1.3rem;
+                        margin-right: 3rem;
+                    }
+                    @include flexCenter(flex-start);
+                    .dot{
+                        margin-top: 2px;
+                        margin-right: 5px;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background-color: white;
+                        @include breakpoint(1100px){
+                            margin-right: 10px;
+                        }
+                    }
+                }
+                .hero-price{
+                    font-size: 1.2rem;
+                    @include breakpoint(600px){
+                        font-size: 1.5rem;
+                    }
+                    @include breakpoint(1100px){
+                        font-size: 2rem;
+                    }
+                }
+                .hero-box-plus{
+                    position: absolute;
+                    right: -18px;
+                    @include  removeDefaultButtonStyle();
+                    background-color: white;
+                    color: $red-color;
+                    padding: .8rem;
+                    border-radius: 50%;
+                }
+            }
+
+        }
+
+        .hero-image-container{
+            display: none;
+            @include breakpoint(992px){
+                display: block;
+                width: 45%;
+            }
+        }
+        
+    }
+
+    .hero-end-img{
+        position: absolute;
+        bottom: -1px;
+        z-index: 1;
+        background-image: url(/images/welcome_grunge_shape-min-1024x15.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 15px;
+    }
+}
+
+// ====== About ====== //
+.about-container{
+    margin-top: 2rem;
+    position: relative;
+    padding: 3rem 1rem;
+    .about-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    @include breakpoint(992px){
+        padding: 3rem 0;
+    }
+
+    .slider-intro{
+        margin: 8rem 0 0 0 ;
+        text-align: center
+    }
+}
+.about{
+    @include breakpoint(992px){
+        @include flexCenter(space-between);
+        align-items: flex-end;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    @include breakpoint(1100px){
+        max-width: 1000px;
+    }
+    @include breakpoint(1200px){
+        max-width: 1100px;
+    }
+    .about-intro{
+        .about-text-container{
+            margin: 1rem 0;
+            @include breakpoint(992px){
+                position: relative;
+                width: 130%;
+            }
+            @include breakpoint(1100px){
+                width: 100%;
+            }
+        }
+        .about-btn-container{
+            margin: 1rem 0;
+        }
+        @include breakpoint(992px){
+            width: 40%;
+        }
+        @include breakpoint(1100px){
+            width: 40%;
+        }
+    }
+    .about-image{
+        @include breakpoint(992px){
+            width: 60%;
+            margin-bottom: -2rem;
+        }
+        @include breakpoint(1100px){
+            width: 55%;
+        }
+    }
+    .burger-left{
+        position: absolute;
+        left: 0;
+        display: none;
+        @include breakpoint(1450px){
+            display: block;
+            top: 5rem;
+        }
+    }
+    
+}
+
+// ====== Slider ====== //
+.my-slider{
+    position: relative;
+    overflow: visible;
+    margin: 0rem 1rem 6rem 1rem;
+    @include breakpoint(992px){
+        max-width: 800px;
+        margin: 2rem auto 6rem  auto;
+    }
+
+    @include breakpoint(1100px){
+        max-width: 1000px;
+    }
+
+    @include breakpoint(1200px){
+        max-width: 1100px;
+    }
+   
+}
+
+.slider-arrows{
+    position: absolute;
+    width: calc(100% + 140px);
+    height: 100%;
+    top: 0;
+    left: -70px;
+    right: -70px;
+    display: none;
+    .swiper-button-prev-unique,
+    .swiper-button-next-unique{
+        position: relative;
+        z-index: 1;
+        width: 45px;
+        height: 45px;
+        background-color: $black-color;
+        @include flexCenter(center);
+        border-radius: 50%;
+        img{
+            max-width: 40%;
+        }
+        cursor: pointer;
+    }
+    @include breakpoint(992px){
+        @include flexCenter(space-between);
+    }
+    
+}
+.slider-content{
+    padding: 40px 20px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+    .border-shape{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .slider-title{
+        font-size: 1.7rem;
+        color: $black-color;
+        font-family: $title-font;
+        font-weight: 900;
+    }
+
+    .slider-text{
+        color: $gray-color;
+        margin: 1rem 0;
+        font-family: $text-font;
+    }
+
+    .slider-price{
+        color: $red-color;
+        font-size: 1.7rem;
+        font-family: $title-font;
+        font-weight: 900;
+    }
+    .slider-btn-container{
+        margin: 1rem 0;
+        @include flexCenter(center);
+        .slider-btn{
+            border: 1px solid red;
+            padding: .5rem 1rem;
+            @include removeDefaultButtonStyle();
+            box-shadow: 0px 10px 20px 0px #0000000d;
+            border: 1px solid #eeeeee;
+            color: $red-color;
+            @include flexCenter(center);
+            border-radius: 100px;
+            padding: .8rem 2rem;
+            i{
+                margin-right: .5rem;
+            }
+            div{
+                font-family: $text-font;
+                font-weight: 600;
+            }
+        }
+    }
+    
+
+}
+
+
+// ====== Ingredients ====== //
+
+.ingredients-container{
+    background-image: url(http://mambotruck.com/wp-content/uploads/2019/10/ingredient_bg-1.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    .ingredients-end{
+        display: none;
+    }
+    @include breakpoint(1200px){
+        background-size: 100% 100%;
+        .ingredients-end{
+            display: block;
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+        }
+    }
+    padding: 4rem 1rem;
+    .ingredients{
+        @include breakpoint(992px){
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @include breakpoint(1100px){
+            max-width: 1000px;
+        }
+        @include breakpoint(1200px){
+            max-width: 1100px;
+        }
+        .ingredients-intro{
+            text-align: center;
+            .section-title{
+                color: white;
+            }
+        }
+
+        .ingredients-grid{
+            margin-top: 4rem;
+            display: grid;
+            row-gap: 2rem;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(7, 'auto');
+            @include breakpoint(992px){
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                align-items: flex-end;
+                column-gap: 2rem;
+            }
+
+            @include breakpoint(1100px){
+                column-gap: 5rem;
+            }
+
+            @include breakpoint(1100px){
+                column-gap: 8rem;
+            }
+            @include breakpoint(1200px){
+                column-gap: 4rem;
+                row-gap: 3rem;
+            }
+        
+            
+            
+            .grid-cell-title{
+                font-size: 1.5rem;
+                color: white;
+                font-family: $title-font;
+                .cell-span{
+                    color: $red-color;
+                }
+            }
+
+            .grid-cell-text{
+                margin-top: 1rem;
+                color: white;
+                font-family: $text-font;
+                line-height: 1.4;
+                font-size: .9rem;
+                
+            }
+        }
+    }
+}
+
+.grid-cell-1 { 
+    position: relative;
+    grid-area: 1 / 1 / 2 / 2;
+    .line-shape{
+        display: none;
+        @include breakpoint(1200px){
+            display: block;
+            position: absolute;
+            right: -150px;
+            top: 15px;
+        }
+
+    }
+}
+.grid-cell-2 {
+    position: relative;
+     grid-area: 2 / 1 / 3 / 2;
+     .line-shape{
+        display: none;
+        @include breakpoint(1200px){
+            display: block;
+            position: absolute;
+            right: -100px;
+            top: 10px;
+        }
+
+    }
+}
+.grid-cell-3 {
+    position: relative;
+    grid-area: 3 / 1 / 4 / 2;
+    .line-shape{
+        display: none;
+        @include breakpoint(1200px){
+            display: block;
+            position: absolute;
+            right: -140px;
+            top: -60px;
+        }
+
+    }
+
+}
+.grid-cell-4 {
+    position: relative;
+    grid-area: 5 / 1 / 6 / 2;
+    .line-shape{
+        display: none;
+        @include breakpoint(1200px){
+            display: block;
+            position: absolute;
+            left: -140px;
+            top: 15px;
+        }
+
+    }
+
+ }
+.grid-cell-5 { 
+    position: relative;
+    grid-area: 6 / 1 / 7 / 2;
+    .line-shape{
+        display: none;
+        @include breakpoint(1200px){
+            display: block;
+            position: absolute;
+            left: -95px;
+            top: 10px;
+        }
+
+    }
+ }
+.grid-cell-6 { 
+    position: relative;
+    grid-area: 7 / 1 / 8 / 2;
+    .line-shape{
+        display: none;
+        @include breakpoint(1200px){
+            display: block;
+            position: absolute;
+            right: 160px;
+            top: -60px;
+        }
+
+    }
+ }
+.grid-cell-7 { grid-area: 4 / 1 / 5 / 2; }
+
+@include breakpoint(992px){
+.grid-cell-1 { grid-area: 1 / 1 / 2 / 2; }
+.grid-cell-2 { grid-area: 2 / 1 / 3 / 2; }
+.grid-cell-3 { grid-area: 3 / 1 / 4 / 2; }
+.grid-cell-4 { grid-area: 1 / 3 / 2 / 4; }
+.grid-cell-5 { grid-area: 2 / 3 / 3 / 4; }
+.grid-cell-6 { grid-area: 3 / 3 / 4 / 4; }
+.grid-cell-7 { grid-area: 1 / 2 / 4 / 3; }
+}
+
+.grid-cell-4,
+.grid-cell-5,
+.grid-cell-6{
+    text-align: right;
+}
+
+.grid-cell-7{
+    text-align: center;
+}
+
+// ====== Menu ====== //
+.menu-container{
+    background-image: url(/images/menu_pattern1-min.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+    .menu-intro{
+        padding-top: 6rem;
+        text-align: center;
+        background-image: url(/images/menu_pattern3-min.png);
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+    .select-menu{
+        margin: 2rem 0;
+        @include flexCenter(center);
+        flex-wrap: wrap;
+        .menu-option{
+            margin: 1rem 2rem;
+        }
+    }
+    .menu{
+        margin: 0rem 1rem;
+        @include breakpoint(992px){
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @include breakpoint(1100px){
+            max-width: 1000px;
+        }
+        @include breakpoint(1200px){
+            max-width: 1100px;
+        }
+    }
+
+    .menu-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 'auto');
+        row-gap: 2rem;
+        @include breakpoint(768px){
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, 'auto');
+            column-gap: 2rem;
+        }
+        .menu-item{
+            font-family: $title-font;
+            
+            .menu-span{
+                color: white;
+                background-color: $red-color;
+                padding: .2em 1rem;
+                font-size: .7rem;
+                border-radius: 100px;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+            .menu-item-wrapper{
+                margin-top: .2rem;
+                 @include flexCenter(flex-start);
+                .menu-item-title{
+                    font-size: 1.5rem;
+                    color: $black-color;
+                    width: fit-content;
+                }
+                hr{
+                    border-top: 2px dashed $gray-color;
+                    flex-grow: 1;
+                    height: -1px;
+                    margin: 7px .5rem 0 .5rem;
+                }
+                .menu-item-price{
+                    font-size: 1.5rem;
+                    color: $red-color;   
+                }
+            }
+    
+            .menu-item-ingredients{
+                font-size: .9rem;
+                color: $gray-color;
+                margin-top: .8rem;
+                @include breakpoint(600px){
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+
+// ====== Offers ====== //
+
+.offers{
+    margin: 6rem 1rem 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 'auto');
+    align-items: center;
+    place-items: center;
+    row-gap: 2rem;
+    .offer-1,
+    .offer-2,
+    .offer-3,
+    .offer-4,
+    .offer-5{
+        cursor: pointer;
+        
+    }
+
+    @include breakpoint(768px){
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 1rem;
+        .offer-1,
+        .offer-2 { 
+            grid-column: auto / span 3;
+        }
+        .offer-3, 
+        .offer-4,
+        .offer-5 { 
+            grid-column: auto / span 2; 
+        }
+    }
+
+    @include breakpoint(992px){
+        max-width: 800px;
+        margin: 6rem auto 3rem auto;
+    }
+
+    @include breakpoint(1100px){
+        max-width: 1000px;
+        
+    }
+
+    @include breakpoint(1200px){
+        max-width: 1100px;
+    }
+
+    
+}
+
+
+// ====== Delivery & Reward ====== //
+.delivery-reward-container{
+    margin-top: 6rem;
+    position: relative;
+    background-image: url(/images/delivery_bg.png);
+    background-position: center;
+    background-size: cover;
+    padding: 6rem 1rem 10rem 1rem;
+    @include breakpoint(992px){
+        padding: 6rem 0rem;
+    }
+    @include breakpoint(1200px){
+        padding: 10rem 0rem;
+    }
+    .delivery-burger{
+        display: none;
+        @include breakpoint(1450px){
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .delivery-reward{
+        position: relative;
+        .delivery-bike-container{
+            display: none;
+            @include breakpoint(1200px){
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%)
+            }
+        }
+        @include breakpoint(992px){
+            @include flexCenter(space-between);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @include breakpoint(1100px){
+            max-width: 1000px;
+        }
+        @include breakpoint(1200px){
+            max-width: 1100px;
+        }
+        .delivery{
+            @include breakpoint(992px){
+                width: 45%;
+            }
+            @include breakpoint(1200px){
+                width: 35%;
+            }
+            .section-text{
+                margin-top: 1rem;
+            }
+            .section-btn{
+                margin: 1rem 0;
+            }
+            .section-title{
+                @include breakpoint(1100px){
+                    font-size: 3rem;
+                }
+            }
+        }
+        .reward{
+            @include breakpoint(992px){
+                width: 45%;
+            }
+            @include breakpoint(1200px){
+                width: 35%;
+            }
+            .section-text{
+                margin-top: 1rem;
+            }
+            .section-title{
+                @include breakpoint(1100px){
+                    font-size: 3rem;
+                }
+            }
+            text-align: right;
+            .section-btn{
+                margin: 1rem 0;
+                float: right;
+            }
+        }
+    }
+}
+
+// ====== Testimonial ====== //
+
+.testimonial{
+    position: relative;
+    margin-top: 6rem;
+    padding: 0 1rem;
+    @include breakpoint(992px){
+        max-width: 800px;
+        margin: 6rem auto;
+        padding: 0;
+    }
+    @include breakpoint(1100px){
+        max-width: 1000px;
+    }
+    @include breakpoint(1200px){
+        max-width: 1100px;
+    }
+    .dots{
+        display: none;
+        @include breakpoint(992px){
+            display: block;
+            position: absolute;
+            left: -50px;
+            top: 100px;
+        }
+    }
+    .testimonial-intro{
+        text-align: center;
+    }
+    .testimonial-slider{
+        margin-top: 2rem;
+        @include breakpoint(992px){
+            margin-top: 5rem;
+        }
+        .swiper-wrapper{
+            padding-bottom: 50px; 
+        }
+        .swiper-pagination-bullet-active {
+            background-color: $red-color;
+          }
+    }
+
+    .testimonial-content{
+        @include breakpoint(992px){
+            @include flexCenter(space-between);
+        }
+        .testimonial-image{
+            @include breakpoint(992px){
+                width: 50%;
+            }
+        }
+       .testimonial-text{
+            @include breakpoint(992px){
+                width: 45%;
+            }
+            i{
+                font-size: 4rem;
+                color: #EEEEEE;
+            }
+            p{
+                line-height: 1.4;
+                color: #2B2B2B;
+                font-family: $text-font;
+                font-weight: 500;
+            }
+            h3{
+                @include flexCenter(flex-start);
+                font-family: $title-font;
+                .line{
+                    background-color: $red-color;
+                    width: 50px;
+                    height: 1px;
+                    margin: 5px 0 0 .5rem; 
+                }
+            }
+       }
+    }
+} 

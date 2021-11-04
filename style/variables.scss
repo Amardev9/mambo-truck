@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Permanent+Marker&family=Roboto:wght@400;500;700;900&display=swap');
+// Colors
+$red-color: #E7272D;
+$black-color: #222222;
+$gray-color: #7A7A7A;
+$brown-color: #DD8735;
+$yellow-color: #FBBE36;
+// Font
+$span-font: 'Permanent Marker', cursive;
+$title-font: 'Barlow', sans-serif;
+$text-font: 'Roboto', sans-serif;
+
+
+// Mixin
+@mixin breakpoint($width) {
+    @media(min-width: $width){
+        @content;
+    }
+}
+
+@mixin  flexCenter($position) {
+    display: flex;
+    align-items: center;
+    justify-content: $position;
+}
+
+@mixin removeDefaultButtonStyle {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
