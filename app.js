@@ -37,6 +37,7 @@ const swiper = new Swiper('.burger-slider', {
 const swiper2 = new Swiper('.testimonial-slider', {
   // Optional parameters
   slidesPerView: 1,
+  spaceBetween: 16,
 
   // If we need pagination
   pagination: {
