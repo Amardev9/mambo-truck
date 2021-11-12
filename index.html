@@ -8,34 +8,59 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
         <!-- Swiper Css -->
         <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+        <!-- Animation -->
+        <link rel="stylesheet" href="/style/aos.css">
         <!-- Style SCSS -->
         <link rel="stylesheet" href="/style/myStyle.css">
         <title>Mambo Truck</title>
     </head>
-    <body>
+    <body id="body" class="overflow-h">
+        <!-- Spinner -->
+        <div class="loading-overlay">
+            <div class="sk-chase">
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+              </div>
+        </div>
+        <div class="go-back-btn">
+            <button><a href="#logo"><i class="fas fa-chevron-up"></i></a></button>
+        </div>
+        <div id="overlay" class="nav-overlay">
+            <div class="close" >
+                <i class="fas fa-times" ></i>
+            </div>
+            <ul class="navbar">
+                <li class="navbar-item"><a href="#about" class="navbar-link m">About</a></li>
+                <li class="navbar-item"><a href="#menu" class="navbar-link m">Menu</a></li>
+                <li class="navbar-item"><a href="#contact" class="navbar-link m">Contact</a></li>
+            </ul>
+        </div>
         <!-- ====== Hero ====== -->
         <section class="hero" >
             <!-- ====== Navigation ====== -->
             <nav class="nav">
                 <div class="logo-container">
-                    <img class="logo" src="/images/logo.png" alt="logo">
+                    <img id="logo" class="logo" src="/images/logo.png" alt="logo">
                 </div>
                 <div class="nav-toggler">
                     <i class="fas fa-bars" ></i>
                 </div>
                 <ul class="navbar">
-                    <li class="navbar-item"><a href="#" class="navbar-link">Home</a></li>
-                    <li class="navbar-item"><a href="#" class="navbar-link">About</a></li>
-                    <li class="navbar-item"><a href="#" class="navbar-link">Menu</a></li>
-                    <li class="navbar-item"><a href="#" class="navbar-link">Contact</a></li>
+                    <li class="navbar-item"><a href="#about" class="navbar-link">About</a></li>
+                    <li class="navbar-item"><a href="#menu" class="navbar-link">Menu</a></li>
+                    <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
                 </ul>
             </nav>
 
             <div class="hero-container">
                     <div class="hero-intro">
-                        <span class="hero-span">NEW IN MENU <div class="hero-line"></div></span>
-                        <h1 class="hero-title" >DOUBLE <br> MUSHROOM <br> BURGER</h1>
-                        <div class="hero-box">
+                        <span data-aos="fade-up" data-aos-delay="2300" class="hero-span">NEW IN MENU <div class="hero-line"></div></span>
+                        <h1 data-aos="fade-up" data-aos-delay="2600" class="hero-title" >DOUBLE <br> MUSHROOM <br> BURGER</h1>
+                        <div data-aos="fade-up" data-aos-delay="2900" data-aos-offset="-50" class="hero-box">
                             <div><div class="dot"></div> Beef</div>
                             <div><div class="dot"></div> Cheese</div>
                             <div><div class="dot"></div> Mushroom</div>
@@ -45,7 +70,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="hero-image-container">
+                    <div data-aos="fade-down" data-aos-delay="3000" data-aos-offset="-50" class="hero-image-container">
                         <img src="/images/slider-img.png" alt="burger">
                     </div>
             </div>
@@ -53,7 +78,7 @@
         </section>
 
         <!-- ====== About ====== -->
-        <div class="about-container">
+        <div id="about"  class="about-container">
             <img class="about-bg" src="/images/welcome_pattern-min.png" alt="background">
             <section class="about" >
                 <div class="about-intro">
@@ -225,7 +250,7 @@
         </div>
 
         <!-- ===== Menu ====== -->
-            <div class="menu-intro">
+            <div id="menu" class="menu-intro">
                 <span class="section-span">MENU</span>
                 <h2 class="section-title">Choose your combo <br> & order now!</h2>
                 <div class="select-menu">
@@ -360,7 +385,7 @@
                     <button class="section-btn" ><i class="fas fa-shopping-cart" ></i><div>ORDER ONLINE</div></button>
                 </div>
                 <div class="reward">
-                    <span class="section-span">DELIVERY</span>
+                    <span class="section-span">REWARD</span>
                     <h2 class="section-title">Earn points every time you order online</h2>
                     <p class="section-text" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, modi. Quasi assumenda cupiditate rerum earum</p>
                     <button class="section-btn" ><i class="fas fa-info-circle"></i><div>LEARN MORE</div></button>
@@ -406,7 +431,7 @@
                             <div class="testimonial-text">
                                 <i class="fas fa-quote-left"></i>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, iure! Facere facilis aliquam eius incidunt aliquid molestias corrupti in itaque!</p>
-                                <h3><div>Nina Margaret</div> <div class="line"></div></h3>
+                                <h3><div>Joe Doe</div> <div class="line"></div></h3>
                             </div>
                         </div>
                     </div>
@@ -419,7 +444,7 @@
                             <div class="testimonial-text">
                                 <i class="fas fa-quote-left"></i>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, iure! Facere facilis aliquam eius incidunt aliquid molestias corrupti in itaque!</p>
-                                <h3><div>Nina Margaret</div> <div class="line"></div></h3>
+                                <h3><div>Jhon Smith</div> <div class="line"></div></h3>
                             </div>
                         </div>
                     </div>
@@ -432,7 +457,7 @@
                             <div class="testimonial-text">
                                 <i class="fas fa-quote-left"></i>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, iure! Facere facilis aliquam eius incidunt aliquid molestias corrupti in itaque!</p>
-                                <h3><div>Nina Margaret</div> <div class="line"></div></h3>
+                                <h3><div>Daniel Pros</div> <div class="line"></div></h3>
                             </div>
                         </div>
                     </div>
@@ -528,7 +553,7 @@
         </div>
 
         <!-- ====== Footer ====== -->
-        <div class="footer-container">
+        <div id="contact" class="footer-container">
             <section class="footer" >
                 <div class="footer-header">
                     <div class="hr" ></div>
@@ -580,6 +605,8 @@
                 </div>
             </section>
         </div>
+        <!-- Animation -->
+        <script src="/aos.js" ></script>
         <!-- Swiper JS -->
         <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
         <!-- JS -->
